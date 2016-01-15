@@ -1,0 +1,10 @@
+Instructions:
+
+1. Implement a remove button. Remove button should appear on each row in the cart and will remove the item on that row from the cart.
+2. Implement the quantity functionality. Each cart item should have a quantity. User should be able to increase/decrease the quantity of an item once it is in the cart.
+3. Put in basic validations (no negative quantities, no negative or zero prices)
+4. Alphabetize items within the list being shown.
+5. Add a total that sums up the prices and displays that under the cart. The total should reflect any changes made to the cart including additions, deletions, or updates to quantities.
+6. Clean up the aesthetics of the page without affecting functionality. Feel free to modify the HTML, use CSS, or a 3rd-party library such as Bootstrap. Make it look modern and professional.
+
+Feel free to modify index.html or script.js in any way you feel is necessary to complete the above tasks.

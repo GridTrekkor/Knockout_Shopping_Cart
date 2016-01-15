@@ -1,0 +1,85 @@
+<html>
+<head>
+    <script src="jquery-1.11.2.min.js"></script>
+    <script src="knockout-3.2.0.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="jumbotron-narrow.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet'
+          type='text/css'>
+    <link rel="stylesheet" href="style.css">
+    <title>Shopping Cart</title>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="jumbotron">
+        <h1>Let's Go Shopping!</h1>
+
+        <div class="fields">
+            <div class="name">
+                <label>Name</label>
+                <br/>
+                <input class="cartInput" type="text" data-bind="value: itemName" required=""/>
+                <br/>
+                <label data-bind="style: { opacity: nameError() == true ? 1 : 0 }" class="error">Please enter a name</label>
+            </div>
+            <div class="price">
+                <label>Unit Price ($)</label>
+                <br/>
+                <input class="cartInput" id="thePrice" type="number" min="0.25" step="0.25" value="1.00"
+                       data-bind="value: itemPrice, event: { change: showDecimal }"/>
+                <br/>
+                <label data-bind="style: { opacity: numberError() == true ? 1 : 0 }" class="error">Please enter a valid price</label>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-sm" data-bind="click: addItem">Add Item</button>
+        </div>
+    </div>
+
+    <div class="jumbotron cart">
+        <h2>Grand Total: $<span data-bind="text: totalPrice"></span></h2>
+        <div data-bind="if: showTable">
+            <h4>Shopping Cart Detail</h4>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th></th>
+                    <th>Unit Price</th>
+                </tr>
+                </thead>
+                <tbody data-bind="foreach: itemsInCart">
+                    <tr>
+                        <td class="col-md-2">
+                            <span style="padding-top:5px" title="Delete this item" data-bind="click: $root.removeItem"
+                                  class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        </td>
+                        <td class="col-md-4" data-bind="text: itemName"></td>
+                        <td class="col-md-4">
+                            <input type="number" min="1" step="1"
+                                   data-bind="value: itemQuantity, valueUpdate: ['afterkeydown', 'input']"
+                                   style="width: 4em">
+                            <span title="Update this item's quantity" data-bind="click: $root.updateQuantity"
+                                  style="padding-left:20px" class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                        </td>
+                        <td>
+                        </td>
+                        <td class="col-md-4">
+                            $<span data-bind="text: itemPrice"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

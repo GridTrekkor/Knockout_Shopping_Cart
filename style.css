@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('fonts/glyphicons-halflings-regular.eot');
+    src: url('fonts/glyphicons-halflings-regular.eot?#iefix')
+    format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.jumbotron {
+    background-color: #D2EEFF;
+    box-shadow: 0 0 7px #999;
+    text-align: center;
+}
+
+.jumbotron h1 {
+    font-size: 50px;
+    font-weight : 700;
+}
+
+.jumbotron .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #84E3C6;
+    color: #000;
+}
+
+.fields label {
+    float : left;
+    text-align : left;
+}
+
+.error {
+    color : #F00;
+    padding-top : 5px;
+}
+
+.name, .price {
+    display: inline-block;
+    vertical-align: top;
+    padding : 30px;
+}
+
+.cart {
+    background-color: #FFF;
+    box-shadow: none;
+    padding-top : 0;
+}
+
+.cartInput {
+    width : 150px;
+}
