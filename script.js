@@ -13,6 +13,7 @@ $(function() {
         self.showTable = ko.observable(false);
         self.subTotal = ko.observable("0.00");
 
+        // set initial error checks
         self.nameError = ko.observable(false);
         self.numberError = ko.observable(false);
         self.doNotAdd = ko.observable(false);
@@ -40,6 +41,7 @@ $(function() {
                 self.doNotAdd(false);
             }
 
+            // push to item array if no errors
             if (!self.doNotAdd()) {
                 self.itemsInCart.push(self.newItem);
 
@@ -94,8 +96,6 @@ $(function() {
         self.updateQuantity = function(data) {
             self.getTotalPrice();
         };
-
-
 
         // force two decimal places in prices
         self.showDecimal = function() {
