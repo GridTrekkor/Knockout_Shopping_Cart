@@ -92,11 +92,6 @@ $(function() {
             }
         };
 
-        // update item quantity
-        self.updateQuantity = function(data) {
-            self.getTotalPrice();
-        };
-
         // force two decimal places in prices
         self.showDecimal = function() {
             var tempPrice = self.itemPrice();
